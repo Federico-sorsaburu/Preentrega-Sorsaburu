@@ -2,7 +2,7 @@
 
  
 import { useState } from "react";
-import { Boton, Header,ItemListContainer } from "./Components";
+import { Boton, CartWidget, Header,ItemListContainer } from "./Components";
  
  
 
@@ -34,8 +34,9 @@ const Restar = () =>{
       onClick={Restar}
     
     /> 
-    <h1>Hola coder! {count}</h1>
-    <ItemListContainer />
+    
+   
+    <ItemListContainer greeting="Saludo Usuario" />
     </>
   );
 }

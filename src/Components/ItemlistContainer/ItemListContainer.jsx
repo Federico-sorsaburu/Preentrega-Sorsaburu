@@ -1,7 +1,7 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-const ItemListContainer = () => {
+const ItemListContainer = ({greeting}) => {
   const productos = [
     {
       id: 1,
@@ -40,8 +40,23 @@ const ItemListContainer = () => {
       precio: "600",
     },
   ];
-
-  return <ItemList productos={productos} />;
-};
+   
+  return (
+    <div>
+     <h1 style={{
+  color: "black",
+  fontSize: "3rem",
+  width: "100%",
+  textAlign: "center",
+  fontFamily:  " Cochin, Georgia, Times",
+  fontStyle: "italic"
+ 
+}}>
+  {greeting}
+</h1>
+      <ItemList  productos={productos} />
+    </div>
+  );
+}; 
 
 export default ItemListContainer;
