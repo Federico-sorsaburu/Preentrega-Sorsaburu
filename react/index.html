@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <h1>clase 1</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cumque
+        quod labore explicabo deleniti quae. Iste in laboriosam delectus
+        perferendis, eaque minima optio eius, necessitatibus distinctio fugiat
+        aut, nemo debitis.
+      </p>
+      <div id="root"></div>
+    </main>
+    <footer></footer>
+    <!-- <script src="main.js"></script> -->
+
+
+
+
+     <script type="text/babel">
+  const div = document.querySelector('#root')
+  const miFunc = () => console.log("hola coder")
+            const MiBoton = () =>{
+                return <button onClick={miFunc}>Click me</button>
+                 
+            }
+
+
+        const root = ReactDOM.createRoot(div)
+        root.render(<MiBoton></MiBoton>)
+     </script>
+  </body>
+</html>
+ 
