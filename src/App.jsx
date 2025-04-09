@@ -3,7 +3,7 @@
  
 import { useState } from "react";
 import { Boton, CartWidget, Header,ItemListContainer } from "./Components";
- 
+ import Counter from "./Components/Counter";
  
 
 function App() {
@@ -17,13 +17,14 @@ const Aumentar = () =>{
 
 }
 const Restar = () =>{
-  if(count - 1 == 0)  setCount(count-1)
+  if(count - 1 >= 0)  setCount(count-1)
   
 }
 // --------------------
 
   return (
     <>
+    <Counter />
     <Header />
     <Boton label={"Aumentar count"}type="success" 
       onClick={Aumentar}
@@ -34,7 +35,7 @@ const Restar = () =>{
       onClick={Restar}
     
     /> 
-    
+    <h1>hola, toca aca {count}</h1>
    
     <ItemListContainer greeting="Saludo Usuario" />
     </>
