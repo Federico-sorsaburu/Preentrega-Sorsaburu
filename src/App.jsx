@@ -1,48 +1,45 @@
 // import './App.css'
 
- 
 import { useState } from "react";
-import { Boton, CartWidget, Header,ItemListContainer } from "./Components";
- import Counter from "./Components/Counter";
+import { Boton, CartWidget, Header, ItemListContainer } from "./Components";
+import { useInput } from "./hooks/useInput";
  
+//  import Counter from "./Components/Counter";
 
 function App() {
-
-// Use
-const [count, setCount] = useState(0)
-
-  // Funcion para boton
-const Aumentar = () =>{
- setCount(count+1)
-
-}
-const Restar = () =>{
-  if(count - 1 >= 0)  setCount(count-1)
-  
-}
-// --------------------
-
+  // const [name, setName] = useState("");
+//  const name = useInput('', 'text')
+//  const email = useInput('','email')
+//  console.log(name)
+//  console.log(email)
   return (
     <>
-    <Counter />
-    <Header />
-    <Boton label={"Aumentar count"}type="success" 
-      onClick={Aumentar}
-      
-      
-     />
-    < Boton label={"Restar Count"} type="danger"
-      onClick={Restar}
-    
-    /> 
-    <h1>hola, toca aca {count}</h1>
-   
-    <ItemListContainer greeting="Saludo Usuario" />
+      {/* <form>
+        <label>Nombre:</label>
+        <input {...name} />
+        <label>Email</label>
+        <input {...email}/>
+        <button>Enviar</button>
+
+        <h3>NombrE:{name.value}</h3>
+        <h3>Correo:{email.value}</h3>
+      </form> */}
+
+      <Header />
+
+      {/* <button onClick={() => setToggle(!toggle)}>Pinchar/De</button> */}
+     
+      <ItemListContainer />
     </>
   );
 }
 
 export default App;
 
-
 // Componente Padre
+
+// const form = document.querySelector('form');
+// form.addEventListener('submit', (event) =>{
+//   event.preventDefault()
+
+// })

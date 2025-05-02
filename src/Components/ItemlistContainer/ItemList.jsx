@@ -1,25 +1,30 @@
 // Recibir los productos aca
 
+import React from "react";
+import Item from "./Item";
 
-import React from 'react'
-import Item from './Item';
+const ItemList = ({ productos }) => {
+  console.log(productos);
 
-const ItemList = ({productos}) => {
-    console.log(productos);
   return (
     <div>
-      {productos.map((e) =>
-       <Item
-       key={e.id}
-       titulo={e.titulo}
-      descripcion={e.descripcion} 
-      precio={e.precio}
-        id={e.id}
-      
-      />)}
-    </div>
-  )
-}
+      {productos.map((e) => (
+        <Item
+          key={e.id}
+          image={e.image}
+          title={e.title}
+          description={e.description}
+          price={e.price}
+          id={e.id}
+        >
 
-export default ItemList
+          
+        </Item>
+
+      ))}
+    </div>
+  );
+};
+
+export default ItemList;
 // ItemList depende de ItemListContainer

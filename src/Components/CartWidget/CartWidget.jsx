@@ -8,9 +8,9 @@ const CartWidget = () => {
   return (
     <i
       className="bi bi-cart-dash"
-      style={{ fontSize: "34px", color: "white", cursor: "pointer" }}
+      style={{ fontSize: "20px", color: "red", cursor: "pointer" }}
       onClick={onClick}
-    ></i>
+    ><span style={{fontSize: "15px"}}>0</span></i>
   );
 };
 
