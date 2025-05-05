@@ -40,7 +40,7 @@ const ItemListContainer = ({ greeting }) => {
       >
         {greeting}
       </h1>
-      <ItemList productos={productos} />
+      <ItemList productos={filteredList} />
     </div>
   );
 };
