@@ -23,16 +23,16 @@ const Header = () => {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item>
-                  <Link to="/category">Ropa</Link>
+                  <Link to="/category/men">men's clothing</Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <Link to="/category">Electrónica</Link>
+                  <Link to="/category/women">women's clothing</Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <Link to="/category">Jemelery</Link>
+                  <Link to="/category/electronics">electronics</Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <Link to="/category">Joyería</Link>
+                  <Link to="/category/jewelery">jewelery</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

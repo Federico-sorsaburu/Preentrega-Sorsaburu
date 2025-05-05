@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import ItemList from "../Components/ItemlistContainer/ItemList";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
   // userRef, useState, useEffect, useContext, useReducer, use
 
   const [productos, setProductos] = useState([]);
+  console.log(productos);
+  const { category } = useParams();
+  console.log(category);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -17,7 +21,11 @@ const ItemListContainer = ({ greeting }) => {
         console.log(err);
       });
   }, []);
-
+  // Filtrar por categoria
+  const filteredList = category
+    ? productos.filter(prod => prod.category.includes(category))
+    : productos;
+  console.log("filteredList", filteredList);
   return (
     <div>
       <h1

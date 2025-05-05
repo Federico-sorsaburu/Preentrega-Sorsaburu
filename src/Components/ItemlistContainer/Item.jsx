@@ -4,9 +4,11 @@ import stylesboton from './Agregar.module.css'
 import styles from './Item.module.css'
 import Boton from "../Boton/Boton";
 import Counter from "./Counter";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Item = ({ id, title, description, price, image }) => {
+ const navigate = useNavigate()
   return (
     
     <div>
@@ -23,9 +25,10 @@ const Item = ({ id, title, description, price, image }) => {
             label="Agregar Producto "
             onClick={() => {
               console.log("PRODUCTO SELECCIONADO :", id);
+              useNavigate('/item/' + id)
             }}
           />
-         
+         <Link to={'/item/' + id}>Ver Detalle</Link>
         </Card.Body>
       </Card>
     </div>

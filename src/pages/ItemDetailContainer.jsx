@@ -24,6 +24,7 @@ console.log(id)
         <img src={productos.image} alt="" width={230} />
         <h2>{productos.title}</h2>
         <p>{productos.description}</p>
+        <p>{productos.price}</p>
       </div>
     )
   }
