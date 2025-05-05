@@ -1,5 +1,5 @@
 // Recibir los productos aca
-
+import styles from './Item.module.css'
 import React from "react";
 import Item from "./Item";
 
@@ -7,7 +7,7 @@ const ItemList = ({ productos }) => {
   console.log(productos);
 
   return (
-    <div>
+    <div className={styles['list-container']}>
       {productos.map((e) => (
         <Item
           key={e.id}

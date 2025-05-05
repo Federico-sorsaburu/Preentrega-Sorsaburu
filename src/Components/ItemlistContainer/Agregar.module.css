@@ -1,0 +1,9 @@
+.bgrBoton{
+   background-color: rgba(236, 236, 236, 0.384) !important;
+   border-radius: 10px !important;
+   border: .5px solid rgb(192, 190, 190) !important;  
+   color: black !important;
+   margin: 0 auto !important;
+   display: flex !important
+}
+ 
