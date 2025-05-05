@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import Boton from "../Boton/Boton";
-import Counter from "../Counter";
+import Counter from "./Counter";
+
 
 const Item = ({ id, title, description, price, image }) => {
   return (
@@ -21,7 +22,7 @@ const Item = ({ id, title, description, price, image }) => {
             }}
           />
          
-      {/* <Counter/> */}
+      <Counter/>
         </Card.Body>
       </Card>
     </div>

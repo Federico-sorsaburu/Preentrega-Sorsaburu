@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
  
 
 const Header = () => {
@@ -10,9 +11,11 @@ const Header = () => {
     <Container>
       <Navbar.Brand href="#home">Navbar</Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
+        <Link to='/' >Home</Link>
+        <Link to='/about' >About</Link>
+        <Link to='/category' >Ropa </Link>
+        <Link to='/category' >Electrónica </Link>
+        <Link to='/category' >Joyería </Link>
         
       </Nav>
      <CartWidget count="0"/>

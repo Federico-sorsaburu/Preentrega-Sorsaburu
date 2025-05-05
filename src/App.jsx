@@ -4,6 +4,16 @@ import { useState } from "react";
 import { Boton, CartWidget, Header, ItemListContainer } from "./Components";
 import { useInput } from "./hooks/useInput";
  
+import ItemDetailContainer from "./pages/ItemDetailContainer";
+import Carts from "./pages/Carts";
+import Check from "./pages/Check";
+import About from "./pages/About";
+import { Route, Routes } from "react-router-dom";
+ 
+ 
+ 
+ 
+ 
 //  import Counter from "./Components/Counter";
 
 function App() {
@@ -28,7 +38,15 @@ function App() {
       <Header />
 
       {/* <button onClick={() => setToggle(!toggle)}>Pinchar/De</button> */}
-     
+     <Routes>
+      <Route path="/" element={<ItemListContainer />} />
+      <Route path="/category" element={<ItemListContainer />} />
+      <Route path="/item" element={<ItemDetailContainer/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/carts" element={<Carts/>} />
+      <Route path="/checkout" element={<Check/>} />
+      <Route path="*" element={<h1>Pagina no Encontrada - 404 not found</h1>} />
+     </Routes>
       <ItemListContainer />
     </>
   );
