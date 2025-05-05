@@ -1,36 +1,25 @@
- 
 import { useEffect, useState } from "react";
 import ItemList from "../Components/ItemlistContainer/ItemList";
 
 const ItemListContainer = ({ greeting }) => {
-  const [categoria, setCategoria] = useState("");
   // userRef, useState, useEffect, useContext, useReducer, use
 
-  const [productos, setProductos] = useState([])
+  const [productos, setProductos] = useState([]);
 
-
-  
-useEffect(() =>{
-
-  fetch('https://fakestoreapi.com/products')
-  .then(response => response.json())
-  .then(data =>{ 
-    console.log(data)
-    setProductos(data)
-  }).catch((err) => {
-    console.log(err)
-  })
-  
-}, [])
-
-
-
-
- 
-
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setProductos(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
-    <div> 
+    <div>
       <h1
         style={{
           color: "black",
@@ -49,6 +38,3 @@ useEffect(() =>{
 };
 
 export default ItemListContainer;
-
-
- 

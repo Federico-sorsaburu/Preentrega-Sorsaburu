@@ -14,7 +14,7 @@ const Counter = () => {
   // };
   // console.log(contador);
 
- const {count, restar, sumar, reset} = useCount (1,0,10)
+ const {count, restar, sumar, reset} = useCount (0,0,10)
   
   return (
     <div  className={styles.btnGrp}>
