@@ -1,14 +1,37 @@
 // import './App.css'
+
+ 
+
+
+
+
+
+
 import { Route, Routes } from "react-router-dom";
 import { Header, ItemListContainer } from "./Components";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
 import Carts from "./pages/Carts";
 import Check from "./pages/Check";
 import About from "./pages/About";
+import { useEffect } from "react";
 
 //  import Counter from "./Components/Counter";
 
 function App() {
+
+//   const onResize = event => {
+//     console.log(event)
+//   }
+//   window.addEventListener('resize', onResize)   
+     
+   
+   
+// useEffect(() =>{
+//   window.removeEventListener(onResize)
+// }, [])
+
+
+
   return (
     <>
       <Header />

@@ -14,7 +14,7 @@ const ItemListContainer = ({ greeting }) => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setProductos(data);
       })
       .catch((err) => {

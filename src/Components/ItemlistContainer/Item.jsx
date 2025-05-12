@@ -12,6 +12,7 @@ const Item = ({ id, title, description, price, image }) => {
   return (
     
     <div>
+ 
       <Card style={{ width: "16rem" }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>
