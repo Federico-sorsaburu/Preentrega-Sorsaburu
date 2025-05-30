@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
-import { Link } from "react-router-dom";
- 
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -23,7 +23,7 @@ const Header = () => {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item>
-                  <Link to="/category/men">men's clothing</Link>
+                  <Link to="/category/men's clothing">men's clothing</Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <Link to="/category/women">women's clothing</Link>

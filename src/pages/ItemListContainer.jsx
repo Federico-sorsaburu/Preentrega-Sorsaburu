@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "../Components/ItemlistContainer/ItemList";
 import { useParams } from "react-router-dom";
-
+import { getbyCategory, getProducts } from "../services/firebaseServices";
 const ItemListContainer = ({ greeting }) => {
   // userRef, useState, useEffect, useContext, useReducer, use
 
@@ -11,16 +11,14 @@ const ItemListContainer = ({ greeting }) => {
   console.log(category);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data);
-        setProductos(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+
+    const fechList = category ? getbyCategory : getProducts
+    
+    fechList(category).then(res =>{
+      setProductos(res)
+    })
+ 
+  }, [category]);
   // Filtrar por categoria
   const filteredList = category
     ? productos.filter(prod => prod.category.includes(category))

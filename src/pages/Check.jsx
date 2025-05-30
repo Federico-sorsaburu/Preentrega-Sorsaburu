@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { validatePassword } from "../helpers/validation";
+import { useCartStates } from "../Context/ContextProvider";
+ 
+import { useNavigate } from "react-router-dom";
+import { createOrder, createOrderAndUpdateStock } from "../services/firebaseServices";
 
 const Check = () => {
   // const [name, setName] = useState('')
@@ -9,22 +13,33 @@ const Check = () => {
     email: "",
     tel: "",
   });
- const handleChange = event => {
-  console.log(event)
-  setUser({...user,[event.target.name]:  event.target.value })
+  const {cart, total, setCart } = useCartStates()
+  const navigate = useNavigate()
+ const handleChange =   event => {
+  const {name, value} = event.target
+ 
+  setUser({...user, [name]: value})
 }
-const handleSubmit = e =>{
+const handleSubmit = async  e =>{
 e.preventDefault()
  
 // validaciones de EMAIL
 
 const regexr = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
- if(validatePassword(user.name) && regexr.test(user.email)){
-  alert ('Pedido cargado. procesando informacion')
-  //envio a firebase
- }else{
-  alert('Campos invalidos')
+  
+ if(!validatePassword(user.name) && !regexr.test(user.email)){
+  alert ('campos invalidos')
+  return
  }
+  const newOrder = {
+   buyer: user,
+   items: cart,
+   total: total
+  }
+ const res = await createOrderAndUpdateStock(newOrder)
+ alert('Compra confirmada. tu Id de compra es '+ res.id)
+ setCart([])
+ navigate('./')
 }
  
   return (
