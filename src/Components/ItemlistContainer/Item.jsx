@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import stylesboton from './Agregar.module.css'
-import styles from './Item.module.css'
+import styles from './item.module.css';
 import Boton from "../Boton/Boton";
 import Counter from "./Counter";
 import { Link, useNavigate } from "react-router-dom";

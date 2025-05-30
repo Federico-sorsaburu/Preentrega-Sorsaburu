@@ -1,5 +1,5 @@
 // Recibir los productos aca
-import styles from './Item.module.css'
+import styles from './item.module.css';
 import React from "react";
 import Item from "./Item";
 
