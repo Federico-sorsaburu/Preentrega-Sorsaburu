@@ -1,5 +1,5 @@
 
-import styles from './Item.module.css'
+import styles from './item.module.css';
  
 const Counter = ({contador, sumar, restar}) => {
  
